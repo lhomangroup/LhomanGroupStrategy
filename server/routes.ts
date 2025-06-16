@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactInquirySchema } from "@shared/schema";
+import { sendEmail, createContactNotificationEmail } from "./sendgrid";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission
@@ -9,6 +10,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const validatedData = insertContactInquirySchema.parse(req.body);
       const inquiry = await storage.createContactInquiry(validatedData);
+      
+      // Send email notification
+      try {
+        const emailParams = createContactNotificationEmail(inquiry);
+        const emailSent = await sendEmail(emailParams);
+        
+        if (emailSent) {
+          console.log('Email notification sent successfully');
+        } else {
+          console.warn('Email notification failed to send');
+        }
+      } catch (emailError) {
+        console.error('Email sending error:', emailError);
+        // Don't fail the request if email fails
+      }
+      
       res.json({ success: true, id: inquiry.id });
     } catch (error) {
       console.error("Contact form error:", error);
