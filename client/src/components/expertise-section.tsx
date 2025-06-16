@@ -53,10 +53,10 @@ export default function ExpertiseSection() {
                   <Icon className="text-primary-blue h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-semibold text-dark mb-4">{expertise.title}</h3>
-                <p className="text-secondary-gray leading-relaxed mb-6">
+                <p className="text-light leading-relaxed mb-6">
                   {expertise.description}
                 </p>
-                <button className="text-primary-blue font-medium hover:text-blue-700 transition-colors duration-200 flex items-center gap-2">
+                <button className="text-primary-blue font-medium hover:opacity-80 transition-all duration-200 flex items-center gap-2">
                   En savoir plus <ArrowRight className="h-4 w-4" />
                 </button>
               </div>

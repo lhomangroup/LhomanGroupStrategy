@@ -31,7 +31,7 @@ export default function TeamSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-dark">Notre Équipe d'Experts</h2>
-          <p className="text-xl text-secondary-gray max-w-3xl mx-auto">
+          <p className="text-xl text-light max-w-3xl mx-auto">
             Des consultants seniors avec une expertise sectorielle reconnue et une expérience internationale
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function TeamSection() {
                 {advantages.map((advantage, index) => (
                   <li key={index} className="flex items-center space-x-3">
                     <CheckCircle className="text-primary-blue h-5 w-5" />
-                    <span className="text-secondary-gray">{advantage}</span>
+                    <span className="text-light">{advantage}</span>
                   </li>
                 ))}
               </ul>
