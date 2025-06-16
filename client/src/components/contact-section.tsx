@@ -72,7 +72,8 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-blue-100">Téléphone</p>
-                  <p className="text-white font-semibold text-lg">+33 1 42 68 53 00</p>
+                  <p className="text-white font-semibold text-lg">Mobile : (+33) 7 43 16 82 35</p>
+                  <p className="text-white font-semibold text-lg">Fixe : (+33) 9 74 06 41 23</p>
                 </div>
               </div>
               
@@ -92,7 +93,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-blue-100">Adresse</p>
-                  <p className="text-white font-semibold text-lg">75008 Paris, France</p>
+                  <p className="text-white font-semibold text-lg">187 Rue Colbert 92700 Colombes, France</p>
                 </div>
               </div>
             </div>

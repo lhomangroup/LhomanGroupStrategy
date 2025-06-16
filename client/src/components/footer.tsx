@@ -43,9 +43,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-300">
-              <li>+33 1 42 68 53 00</li>
+              <li>Mobile : (+33) 7 43 16 82 35</li>
+              <li>Fixe : (+33) 9 74 06 41 23</li>
               <li>contact@lhomangroup.fr</li>
-              <li>75008 Paris, France</li>
+              <li>187 Rue Colbert 92700 Colombes, France</li>
             </ul>
           </div>
         </div>
