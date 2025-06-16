@@ -39,7 +39,7 @@ export default function ExpertiseSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-dark">Nos Expertises</h2>
-          <p className="text-xl text-secondary-gray max-w-3xl mx-auto">
+          <p className="text-xl text-light max-w-3xl mx-auto">
             Une approche holistique du conseil en stratégie, adaptée aux défis contemporains de votre secteur
           </p>
         </div>

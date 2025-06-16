@@ -29,7 +29,7 @@ export default function MethodologySection() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-4xl lg:text-5xl font-bold text-dark">Notre Méthode Éprouvée</h2>
-              <p className="text-xl text-secondary-gray leading-relaxed">
+              <p className="text-xl text-light leading-relaxed">
                 Une approche structurée en 4 étapes pour garantir des résultats durables et mesurables.
               </p>
             </div>
@@ -42,7 +42,7 @@ export default function MethodologySection() {
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-dark mb-2">{step.title}</h3>
-                    <p className="text-secondary-gray">{step.description}</p>
+                    <p className="text-light">{step.description}</p>
                   </div>
                 </div>
               ))}
@@ -59,7 +59,7 @@ export default function MethodologySection() {
             <div className="absolute top-6 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg">
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary-blue">6 mois</div>
-                <div className="text-sm text-secondary-gray">Durée moyenne</div>
+                <div className="text-sm text-light">Durée moyenne</div>
               </div>
             </div>
           </div>

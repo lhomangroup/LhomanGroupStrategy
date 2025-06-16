@@ -32,14 +32,14 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 onClick={() => scrollToSection('contact')}
-                className="bg-primary-blue text-white px-8 py-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold text-lg"
+                className="bg-primary-blue text-white px-8 py-4 rounded-lg hover:opacity-90 transition-all duration-200 font-semibold text-lg"
               >
                 Demander une consultation
               </Button>
               <Button 
                 variant="outline"
                 onClick={() => scrollToSection('methodes')}
-                className="border-2 border-primary-blue text-primary-blue px-8 py-4 rounded-lg hover:bg-primary-blue hover:text-white transition-colors duration-200 font-semibold text-lg"
+                className="border-2 border-primary-blue text-primary-blue px-8 py-4 rounded-lg hover:bg-primary-blue hover:text-white transition-all duration-200 font-semibold text-lg"
               >
                 Découvrir nos méthodes
               </Button>
@@ -47,15 +47,15 @@ export default function HeroSection() {
             <div className="flex items-center space-x-8 pt-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-blue">150+</div>
-                <div className="text-sm text-secondary-gray">Entreprises accompagnées</div>
+                <div className="text-sm text-light">Entreprises accompagnées</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-blue">15</div>
-                <div className="text-sm text-secondary-gray">Années d'expérience</div>
+                <div className="text-sm text-light">Années d'expérience</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-blue">95%</div>
-                <div className="text-sm text-secondary-gray">Taux de satisfaction</div>
+                <div className="text-sm text-light">Taux de satisfaction</div>
               </div>
             </div>
           </div>

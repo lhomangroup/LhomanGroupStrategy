@@ -25,10 +25,12 @@
   --radius: 0.5rem;
   
   /* Custom properties for the design */
-  --primary-blue: hsl(217, 91%, 60%);
-  --secondary-gray: hsl(215, 20%, 50%);
-  --text-dark: hsl(220, 39%, 8%);
+  --primary-blue: hsl(217, 91%, 50%);
+  --primary-blue-light: hsl(217, 91%, 60%);
+  --secondary-gray: hsl(215, 16%, 47%);
+  --text-dark: hsl(215, 28%, 17%);
   --neutral-light: hsl(210, 40%, 98%);
+  --text-light: hsl(215, 15%, 65%);
 }
 
 .dark {
@@ -82,15 +84,19 @@
 
 @layer utilities {
   .text-primary-blue {
-    color: var(--primary-blue);
+    color: var(--primary-blue) !important;
   }
   
   .text-secondary-gray {
-    color: var(--secondary-gray);
+    color: var(--secondary-gray) !important;
   }
   
   .text-dark {
-    color: var(--text-dark);
+    color: var(--text-dark) !important;
+  }
+  
+  .text-light {
+    color: var(--text-light) !important;
   }
   
   .bg-neutral-light {
@@ -99,6 +105,10 @@
   
   .bg-primary-blue {
     background-color: var(--primary-blue);
+  }
+  
+  .bg-primary-blue-light {
+    background-color: var(--primary-blue-light);
   }
   
   /* Improve text contrast for better visibility */
