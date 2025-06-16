@@ -7,18 +7,6 @@ const teamMembers = [
     credentials: "",
     image: "@assets/image_1750070318911.png",
   },
-  {
-    name: "Sophie Moreau",
-    role: "Directrice Stratégie",
-    credentials: "Ex-McKinsey • 15 ans d'expérience • ESSEC",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
-  },
-  {
-    name: "Marc Dubois",
-    role: "Expert Transformation Digitale",
-    credentials: "Ex-Accenture • 12 ans d'expérience • Polytechnique",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
-  },
 ];
 
 const advantages = [
