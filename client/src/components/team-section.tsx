@@ -11,7 +11,7 @@ const teamMembers = [
     image: homerePhoto,
   },
   {
-    name: "Marc Dubois",
+    name: "Eric Bobee",
     role: "Expert Transformation Digitale",
     credentials: "",
     image: marcPhoto,
