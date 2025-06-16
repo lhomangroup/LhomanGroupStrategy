@@ -3,9 +3,9 @@ import { CheckCircle } from "lucide-react";
 const teamMembers = [
   {
     name: "Homère Kouassi",
-    role: "Directeur Général & Fondateur",
+    role: "PDG & Fondateur - Directeur Stratégie",
     credentials: "",
-    image: "@assets/image_1750070318911.png",
+    image: "@assets/image_1750070948912.png",
   },
 ];
 
