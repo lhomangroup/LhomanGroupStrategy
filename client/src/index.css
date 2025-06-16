@@ -4,9 +4,9 @@
 
 :root {
   --background: hsl(0, 0%, 100%);
-  --foreground: hsl(15, 23%, 5%);
+  --foreground: hsl(220, 39%, 11%);
   --muted: hsl(249, 9%, 96%);
-  --muted-foreground: hsl(25, 5%, 45%);
+  --muted-foreground: hsl(220, 15%, 35%);
   --popover: hsl(0, 0%, 100%);
   --popover-foreground: hsl(15, 23%, 5%);
   --card: hsl(0, 0%, 100%);
@@ -103,12 +103,12 @@
   
   /* Improve text contrast for better visibility */
   .text-blue-100 {
-    color: rgba(219, 234, 254, 1);
+    color: rgba(219, 234, 254, 1) !important;
     font-weight: 400;
   }
   
   .text-white {
-    color: #ffffff;
+    color: #ffffff !important;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     font-weight: 400;
   }
@@ -132,5 +132,27 @@
   /* Better contrast for muted text */
   .text-muted-foreground {
     color: hsl(220, 15%, 35%) !important;
+  }
+  
+  /* Force proper text color inheritance on gradient backgrounds */
+  .bg-gradient-to-br h1,
+  .bg-gradient-to-br h2,
+  .bg-gradient-to-br h3,
+  .bg-gradient-to-br p,
+  .bg-gradient-to-br span,
+  .bg-gradient-to-br div {
+    color: inherit !important;
+  }
+  
+  /* Ensure text visibility on blue gradients */
+  .from-primary-blue h1,
+  .from-primary-blue h2,
+  .from-primary-blue h3,
+  .from-primary-blue p {
+    color: white !important;
+  }
+  
+  .from-primary-blue .text-blue-100 {
+    color: rgba(219, 234, 254, 0.95) !important;
   }
 }

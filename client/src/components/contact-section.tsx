@@ -57,10 +57,10 @@ export default function ContactSection() {
     <section id="contact" className="py-20 bg-gradient-to-br from-primary-blue to-blue-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="text-white space-y-8">
+          <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="text-4xl lg:text-5xl font-bold">Prêt à Transformer Votre Entreprise ?</h2>
-              <p className="text-xl text-blue-100 leading-relaxed">
+              <h2 className="text-4xl lg:text-5xl font-bold text-white">Prêt à Transformer Votre Entreprise ?</h2>
+              <p className="text-xl leading-relaxed" style={{color: 'rgba(219, 234, 254, 0.95)'}}>
                 Discutons de vos défis stratégiques et découvrons ensemble comment nous pouvons vous accompagner vers le succès.
               </p>
             </div>
@@ -71,7 +71,7 @@ export default function ContactSection() {
                   <Phone className="text-white h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-blue-100">Téléphone</p>
+                  <p style={{color: 'rgba(219, 234, 254, 0.95)'}}>Téléphone</p>
                   <p className="text-white font-semibold text-lg">Mobile : (+33) 7 43 16 82 35</p>
                   <p className="text-white font-semibold text-lg">Fixe : (+33) 9 74 06 41 23</p>
                 </div>
@@ -82,7 +82,7 @@ export default function ContactSection() {
                   <Mail className="text-white h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-blue-100">Email</p>
+                  <p style={{color: 'rgba(219, 234, 254, 0.95)'}}>Email</p>
                   <p className="text-white font-semibold text-lg">contact@lhomangroup.fr</p>
                 </div>
               </div>
@@ -92,7 +92,7 @@ export default function ContactSection() {
                   <MapPin className="text-white h-6 w-6" />
                 </div>
                 <div>
-                  <p className="text-blue-100">Adresse</p>
+                  <p style={{color: 'rgba(219, 234, 254, 0.95)'}}>Adresse</p>
                   <p className="text-white font-semibold text-lg">187 Rue Colbert 92700 Colombes, France</p>
                 </div>
               </div>
