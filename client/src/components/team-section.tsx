@@ -7,6 +7,12 @@ const teamMembers = [
     credentials: "",
     image: "@assets/image_1750070948912.png",
   },
+  {
+    name: "Marc Dubois",
+    role: "Expert Transformation Digitale",
+    credentials: "Ex-Accenture • 12 ans d'expérience • Polytechnique",
+    image: "@assets/image_1750071132150.png",
+  },
 ];
 
 const advantages = [
