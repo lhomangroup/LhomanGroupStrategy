@@ -1,17 +1,20 @@
 import { CheckCircle } from "lucide-react";
 
+import homerePhoto from "@assets/image_1750070948912.png";
+import marcPhoto from "@assets/image_1750071132150.png";
+
 const teamMembers = [
   {
     name: "Homère Kouassi",
     role: "PDG & Fondateur - Directeur Stratégie",
     credentials: "",
-    image: "@assets/image_1750070948912.png",
+    image: homerePhoto,
   },
   {
     name: "Marc Dubois",
     role: "Expert Transformation Digitale",
     credentials: "",
-    image: "@assets/image_1750071132150.png",
+    image: marcPhoto,
   },
 ];
 
