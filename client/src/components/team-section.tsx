@@ -36,7 +36,7 @@ export default function TeamSection() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="flex justify-center gap-16 mb-12">
           {teamMembers.map((member, index) => (
             <div key={index} className="text-center group">
               <img 
