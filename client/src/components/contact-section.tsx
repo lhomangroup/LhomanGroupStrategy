@@ -54,47 +54,45 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-primary-blue to-primary-blue-light">
+    <section id="contact" className="py-20 bg-neutral-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <h2 className="text-4xl lg:text-5xl font-bold text-white">Prêt à Transformer Votre Entreprise ?</h2>
-              <p className="text-xl leading-relaxed" style={{color: 'rgba(219, 234, 254, 0.95)'}}>
-                Discutons de vos défis stratégiques et découvrons ensemble comment nous pouvons vous accompagner vers le succès.
-              </p>
+        <div className="text-center space-y-4 mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-dark">Prêt à Transformer Votre Entreprise ?</h2>
+          <p className="text-xl text-light max-w-3xl mx-auto">
+            Discutons de vos défis stratégiques et découvrons ensemble comment nous pouvons vous accompagner vers le succès.
+          </p>
+        </div>
+        
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          <div className="space-y-6">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-primary-blue/10 rounded-full flex items-center justify-center">
+                <Phone className="text-primary-blue h-6 w-6" />
+              </div>
+              <div>
+                <p className="text-light">Téléphone</p>
+                <p className="text-dark font-semibold text-lg">Mobile : (+33) 7 43 16 82 35</p>
+                <p className="text-dark font-semibold text-lg">Fixe : (+33) 9 74 06 41 23</p>
+              </div>
             </div>
             
-            <div className="space-y-6">
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                  <Phone className="text-white h-6 w-6" />
-                </div>
-                <div>
-                  <p style={{color: 'rgba(219, 234, 254, 0.95)'}}>Téléphone</p>
-                  <p className="text-white font-semibold text-lg">Mobile : (+33) 7 43 16 82 35</p>
-                  <p className="text-white font-semibold text-lg">Fixe : (+33) 9 74 06 41 23</p>
-                </div>
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-primary-blue/10 rounded-full flex items-center justify-center">
+                <Mail className="text-primary-blue h-6 w-6" />
               </div>
-              
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                  <Mail className="text-white h-6 w-6" />
-                </div>
-                <div>
-                  <p style={{color: 'rgba(219, 234, 254, 0.95)'}}>Email</p>
-                  <p className="text-white font-semibold text-lg">contact@lhomangroup.fr</p>
-                </div>
+              <div>
+                <p className="text-light">Email</p>
+                <p className="text-dark font-semibold text-lg">contact@lhomangroup.fr</p>
               </div>
-              
-              <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                  <MapPin className="text-white h-6 w-6" />
-                </div>
-                <div>
-                  <p style={{color: 'rgba(219, 234, 254, 0.95)'}}>Adresse</p>
-                  <p className="text-white font-semibold text-lg">187 Rue Colbert 92700 Colombes, France</p>
-                </div>
+            </div>
+            
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-primary-blue/10 rounded-full flex items-center justify-center">
+                <MapPin className="text-primary-blue h-6 w-6" />
+              </div>
+              <div>
+                <p className="text-light">Adresse</p>
+                <p className="text-dark font-semibold text-lg">187 Rue Colbert 92700 Colombes, France</p>
               </div>
             </div>
           </div>
@@ -109,7 +107,7 @@ export default function ContactSection() {
                     name="firstName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-secondary-gray">Prénom</FormLabel>
+                        <FormLabel className="text-sm font-medium text-light">Prénom</FormLabel>
                         <FormControl>
                           <Input placeholder="Jean" {...field} />
                         </FormControl>
@@ -122,7 +120,7 @@ export default function ContactSection() {
                     name="lastName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-medium text-secondary-gray">Nom</FormLabel>
+                        <FormLabel className="text-sm font-medium text-light">Nom</FormLabel>
                         <FormControl>
                           <Input placeholder="Dupont" {...field} />
                         </FormControl>
@@ -137,7 +135,7 @@ export default function ContactSection() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-secondary-gray">Email professionnel</FormLabel>
+                      <FormLabel className="text-sm font-medium text-light">Courriel professionnel</FormLabel>
                       <FormControl>
                         <Input type="email" placeholder="jean.dupont@entreprise.com" {...field} />
                       </FormControl>
@@ -151,7 +149,7 @@ export default function ContactSection() {
                   name="company"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-secondary-gray">Entreprise</FormLabel>
+                      <FormLabel className="text-sm font-medium text-light">Entreprise</FormLabel>
                       <FormControl>
                         <Input placeholder="Nom de votre entreprise" {...field} />
                       </FormControl>
@@ -165,7 +163,7 @@ export default function ContactSection() {
                   name="industry"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-secondary-gray">Secteur d'activité</FormLabel>
+                      <FormLabel className="text-sm font-medium text-light">Secteur d'activité</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
                           <SelectTrigger>
@@ -173,11 +171,13 @@ export default function ContactSection() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          <SelectItem value="tech">Technologies</SelectItem>
-                          <SelectItem value="finance">Finance & Banque</SelectItem>
-                          <SelectItem value="retail">Commerce & Distribution</SelectItem>
+                          <SelectItem value="technology">Technologie</SelectItem>
+                          <SelectItem value="finance">Finance</SelectItem>
                           <SelectItem value="healthcare">Santé</SelectItem>
                           <SelectItem value="manufacturing">Industrie</SelectItem>
+                          <SelectItem value="retail">Commerce</SelectItem>
+                          <SelectItem value="consulting">Conseil</SelectItem>
+                          <SelectItem value="education">Éducation</SelectItem>
                           <SelectItem value="other">Autre</SelectItem>
                         </SelectContent>
                       </Select>
@@ -191,11 +191,11 @@ export default function ContactSection() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-secondary-gray">Décrivez votre besoin</FormLabel>
+                      <FormLabel className="text-sm font-medium text-light">Décrivez vos besoins</FormLabel>
                       <FormControl>
                         <Textarea 
-                          rows={4} 
-                          placeholder="Décrivez brièvement votre situation et vos objectifs..." 
+                          placeholder="Décrivez clairement votre situation et vos objectifs..."
+                          className="min-h-[120px]"
                           {...field} 
                         />
                       </FormControl>
@@ -207,12 +207,12 @@ export default function ContactSection() {
                 <Button 
                   type="submit" 
                   disabled={mutation.isPending}
-                  className="w-full bg-primary-blue text-white py-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold text-lg"
+                  className="w-full bg-primary-blue text-white py-4 rounded-lg hover:opacity-90 transition-all duration-200 font-semibold text-lg"
                 >
                   {mutation.isPending ? "Envoi en cours..." : "Envoyer ma demande"}
                 </Button>
                 
-                <p className="text-sm text-secondary-gray text-center">
+                <p className="text-sm text-light text-center">
                   Nous vous recontacterons sous 24h pour planifier votre consultation gratuite
                 </p>
               </form>
