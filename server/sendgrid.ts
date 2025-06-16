@@ -73,7 +73,7 @@ Cette demande a été envoyée depuis le site web Lhoman Group Stratégie le ${n
 
   return {
     to: ['lhomangroup@gmail.com', 'contact@lhomangroup.fr'],
-    from: 'noreply@lhomangroup.fr',
+    from: 'noreply@sendgrid.com',
     subject: `Nouvelle demande de consultation - ${inquiry.firstName} ${inquiry.lastName}`,
     text: textContent,
     html: htmlContent,
