@@ -2,10 +2,10 @@ import { CheckCircle } from "lucide-react";
 
 const teamMembers = [
   {
-    name: "Pierre Lhoman",
+    name: "Homère Kouassi",
     role: "Directeur Général & Fondateur",
-    credentials: "Ex-BCG • 20 ans d'expérience • MBA HEC",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&h=400",
+    credentials: "",
+    image: "@assets/image_1750070318911.png",
   },
   {
     name: "Sophie Moreau",
@@ -49,7 +49,7 @@ export default function TeamSection() {
               />
               <h3 className="text-xl font-semibold text-dark mb-2">{member.name}</h3>
               <p className="text-primary-blue font-medium mb-2">{member.role}</p>
-              <p className="text-secondary-gray text-sm">{member.credentials}</p>
+              {member.credentials && <p className="text-secondary-gray text-sm">{member.credentials}</p>}
             </div>
           ))}
         </div>
