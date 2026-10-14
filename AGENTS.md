@@ -25,8 +25,10 @@ curl -s http://localhost:3000/api/contact                         # [] (DB round
 - **Dependencies** are installed by the `app`/`db-migrate` services on startup
   (`npm install`), so the repo needs no host-side Node install. The repo has no
   Node runtime on the sandbox host; everything runs in containers.
-- **`client/index.html` loads `public/js/replit-dev-banner.js`** (relative URL from the
-  original Replit setup). It 404s outside Replit — a harmless console error, left as-is.
+- **The Replit dev-banner script was removed from `client/index.html`.** The original
+  setup loaded `https://replit.com/public/js/replit-dev-banner.js`, which fails to load
+  outside Replit and logged a console error on every page load; it only ever rendered
+  Replit's own development banner.
 - **Vite host check**: `server/vite.ts` already sets `allowedHosts: true`, so the preview
   hostname is accepted without further configuration.
 - **No test suite** exists in the repo (no `test` script, no test runner).
