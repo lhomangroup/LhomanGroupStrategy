@@ -1,0 +1,12 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "SENDGRID_API_KEY",
+      "description": "SendGrid API key used to email new contact-form submissions to the Lhoman Group team. Optional: without it the site works and inquiries are still saved to the database, only the notification email is skipped.",
+      "requiredAtBoot": false
+    }
+  ]
+}
