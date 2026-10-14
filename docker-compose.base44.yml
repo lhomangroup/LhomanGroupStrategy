@@ -1,0 +1,100 @@
+# Base44 dev environment for this repo (development only).
+#
+#   docker compose -f docker-compose.base44.yml up -d --build
+#
+# Services
+#   db            local Postgres 16; the app's DATABASE_URL points here
+#   db-ws-proxy   bridges Neon's WebSocket-only driver to that plain Postgres
+#   db-migrate    one-shot `drizzle-kit push` that creates the schema, then exits
+#   app           Express + Vite dev server, run from the cloned source (live reload)
+#
+# The web entry point is published on host port 3000 (the container listens on 5000).
+# BASE44_PREVIEW_MODE is provided by the platform; server/db.ts rewires the database
+# driver to the local ws proxy only when it is exactly "1".
+
+services:
+  db:
+    image: postgres:16
+    restart: on-failure
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: lhomangroup
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d lhomangroup"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+      start_period: 15s
+
+  db-ws-proxy:
+    # The Neon serverless driver speaks WebSocket only, so a local Postgres needs
+    # this proxy in front of it (Neon's documented local-dev setup).
+    image: ghcr.io/neondatabase/wsproxy:latest
+    restart: on-failure
+    environment:
+      LISTEN_PORT: ":80"
+      ALLOW_ADDR_REGEX: "^[a-zA-Z0-9._-]+:5432$"
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s -o /dev/null http://127.0.0.1:80/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 10s
+
+  db-migrate:
+    image: node:22
+    working_dir: /app
+    command: ["sh", "-ec", "npm install --no-audit --no-fund && npm run db:push -- --force"]
+    volumes:
+      - .:/app
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/lhomangroup
+    depends_on:
+      db:
+        condition: service_healthy
+
+  app:
+    image: node:22
+    restart: on-failure
+    working_dir: /app
+    command: ["sh", "-ec", "npm install --no-audit --no-fund && exec npm run dev"]
+    ports:
+      - "3000:5000"
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/lhomangroup
+      # ws proxy address the Neon driver is pointed at (see server/db.ts)
+      - NEON_WS_PROXY=db-ws-proxy:80/v1
+      # platform-provided; must be exactly "1" to enable the sandbox DB wiring
+      - BASE44_PREVIEW_MODE
+    env_file:
+      # platform-managed secrets (e.g. SENDGRID_API_KEY), delivered outside the repo
+      - /run/base44/app.env
+    depends_on:
+      db:
+        condition: service_healthy
+      db-ws-proxy:
+        condition: service_healthy
+      db-migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      # probes both the frontend (/) and the API (a real DB query via /api/contact)
+      test:
+        - CMD-SHELL
+        - >-
+          node -e "const t=async u=>{try{const r=await fetch(u);return r.status}catch(e){return 0}};(async()=>{const w=await t('http://127.0.0.1:5000/');const a=await t('http://127.0.0.1:5000/api/contact');if(w!==200){console.log('frontend http status '+w);process.exit(1)}if(a>=500){console.log('api http status '+a);process.exit(1)}console.log('frontend http status '+w+', api http status '+a);process.exit(0)})()"
+      interval: 15s
+      timeout: 10s
+      retries: 8
+      start_period: 150s
+
+volumes:
+  db-data:
